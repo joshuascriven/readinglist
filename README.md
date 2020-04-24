@@ -1,4 +1,3 @@
-# readinglist
 Create weekly topical reading list PDF using rmarkdown, bib, and csv
 
 The PDF produced creates 5-day work weeks for readings beginning at the first day chosen and ending for the number of weeks selected.
