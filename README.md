@@ -60,3 +60,10 @@ The most common customizations are easily updated in lines 1-57.
 - ```topicsIN``` is a string containing the name of the .csv file.
 - ```topics``` contains a character vector of strings for topic for each week.
 
+## Troubleshooting
+You might need to use ```devtools``` to download the ```RefManageR``` package.
+
+````
+install.packages("devtools")
+devtools::install_github("ropensci/RefManageR")
+````
