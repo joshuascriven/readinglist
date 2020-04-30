@@ -73,7 +73,7 @@ start <- as.Date(course_parts$date_start, tryFormats = c("%Y-%m-%d", "%Y/%m/%d",
 end <- as.Date(course_parts$date_end, tryFormats = c("%Y-%m-%d", "%Y/%m/%d","%d-%b")) # verify correct date pattern
 topics <- as.character(course_parts$topics)
 day0 <- as.Date(day0)
-# names(grading) <- c("Grade", "Range", "Grade", "Range", "Grade", "Range")
+names(grading) <- c("Grade", "Range", "Grade", "Range", "Grade", "Range")
 # outline <- data.frame(course_parts[c("Component", "Proportion")])
 # grading_scheme <- data.frame(course_parts[c("grade", "range", "grade.1", "range.1", "grade.2", "range.2")])
 ```
@@ -114,7 +114,7 @@ bib["Dixon:2016aa"]
 # Covid-related Adjustments
 
 This accelerated 6-week course was originally designed for in-person classroom meetings five (5) days a week, but will now be delivered online without daily meetings. I have sought to incorporate features of both synchronous (live) and asynchronous (delayed) interaction to best facilitate learning, while accounting for the special circumstances students might now face. If a student needs additional accomodations, this should be indicated **in writing** within the first 2 weeks of the semester.
-All links to external sites such as zoom, office appointments, can be found on the Canvas homepage.
+All links to external sites such as Zoom and office appointments, can be found on the course's Canvas homepage.
 
 \newpage
 
@@ -122,7 +122,7 @@ All links to external sites such as zoom, office appointments, can be found on t
 
 ## Composition
 
-Your final course grade is a combination of scores according to the table shown here. Additional explanations for each component can be found on the *Assignments* tab on Canvas.
+Your final course grade is a combination of scores according to the table shown below. Additional explanations for each component can be found on the *Assignments* tab on Canvas.
 
 ### Quizzes & Final Exam
 
