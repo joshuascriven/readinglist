@@ -27,7 +27,7 @@ My Modifications:
 
 ### classify.csv
 
-- ```cite``` alphanumeric citekeys (unique bib file entry keys).
+- ```cite``` alphanumeric citekeys (unique bib file entry keys). When a non-citekey value is found among the citekeys, it is printed verbatim (as markdown) in the final document.
 - ```type``` string values ```refs``` (for main readings) and ```sups``` (for supplementary readings). All other values being ignored. This is equivalent to 'commenting out' entries for future use.
 - ```unit``` integer values for the course reading unit.
 
@@ -38,7 +38,7 @@ My Modifications:
 - ```date_end``` (optional) date string indicating end of unit
 
 ### bibfile.bib
-- citekeys must be unique and should be distinguishable from any title you might manually assign to a reading. Regex is used to identify citekeys (default "[A-Za-z]:[0-9]"). When a non-citekey value is found among the citekeys, it is printed verbatim (as markdown) in the final document.
+- citekeys must be unique and should be distinguishable from any title you might manually assign to a reading. Regex is used to identify citekeys (default "[A-Za-z]:[0-9]").
 
 ## In-code Customizations
 
