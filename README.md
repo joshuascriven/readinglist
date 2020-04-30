@@ -11,6 +11,7 @@ My Modifications:
 - Provide an an option for custom dates (for complex weekly splits) in addition to the default setting of 5-day contiguous weeks.
 - Allow for a modern header with optional quote.
 - Produces optional grading scale and course components tables from csv files. (Great for users who like to update tables in Excel rather than markdown).
+- Adds ability to incorporate optional university seal.
 
 ---
 

@@ -18,7 +18,7 @@ officehours: "MW 12:30--13:45"
 office: "[Online](https://fsu.zoom.us/meeting)"
 classroom: "[Online](https://fsu.zoom.us/meeting)"
 classhours: "M--F 11:00--12:15"
-
+seal: "seal"
 fontfamily: mathpazo
 fontsize: 10pt
 tables: yes

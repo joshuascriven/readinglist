@@ -136,7 +136,26 @@ $if(listings)$
 \usepackage{listings}
 $endif$
 
+\usepackage{graphicx}
 \usepackage{setspace}
+
+% Remove the author field and the space associated
+% from the definition of maketitle!
+\makeatletter
+\renewcommand{\@maketitle}{
+\newpage
+ \null
+ \vskip 2em%
+ \begin{center}%
+  {\LARGE \@title \par}%
+  \@date
+  
+  $if(seal)$
+  \includegraphics[width=30mm,scale=0.5]{$seal$}
+  $endif$
+ \end{center}%
+ \par} \makeatother
+ 
 
 $if(title)$
 \title{$title$}
@@ -149,6 +168,8 @@ $if(author)$
 \author{$for(author)$$author$$sep$ \and $endfor$}
 $endif$
 \date{$date$}
+
+
 
 
 %%%%% tables that span multiple pages
@@ -231,14 +252,3 @@ $include-after$
 $endfor$
 \end{document}
 
-\makeatletter
-\def\@maketitle{%
-  \newpage
-%  \null
-%  \vskip 2em%
-%  \begin{center}%
-  \let \footnote \thanks
-    {\fontsize{18}{20}\selectfont\raggedright  \setlength{\parindent}{0pt} \@title \par}%
-}
-%\fi
-\makeatother
