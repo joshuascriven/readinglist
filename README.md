@@ -8,7 +8,7 @@ My Modifications:
 - Allow for both required and supplemental (or whatever second category you choose) readings.
 - Simplify code to loop through reading list of any length.
 - Incorporate the option to include sources that are not fully styled references.
-- Provide an an option for custom dates (for complex weekly splits) in addition to the default setting of 5-day weeks.
+- Provide an an option for custom dates (for complex weekly splits) in addition to the default setting of 5-day contiguous weeks.
 - Allow for a modern header with optional quote.
 - Produces optional grading scale and course components tables from csv files. (Great for users who like to update tables in Excel rather than markdown).
 

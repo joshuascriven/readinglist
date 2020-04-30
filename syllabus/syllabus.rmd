@@ -61,7 +61,7 @@ bibpattern <- "[A-Za-z]:[0-9]" # regex pattern uniquely identifying bib entries 
 unit <- "Module " # the term for each unit of readings (e.g., "week", "section", "module")
 not_main_readings <- "Cases" # term for readings that are not the main readings (e.g., "Suggested", "Supplemental", "Other")
 # !!! Unit options
-dating <- "auto" # set to auto or leave blank (custom)
+dating <- "custom" # set to auto or leave blank (custom)
 day0 <- "2020-05-11" # the first day of your course/reading schedule
 # !!! If using custom dating:
 divider <- " & " # set divider for date ranges (e.g., '&', '-')
