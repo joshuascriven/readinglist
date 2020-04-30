@@ -1,6 +1,6 @@
 Create a syllabus with weekly topical reading list (or just the reading list) PDF using rmarkdown, bibfile, and csv. Students and researchers can use the reading list for categorizing references for a paper or research project. 
 
-The Latex templates and the genral idea for this repo are modifications of the syllabus code and steps produced by [svmiller](https://github.com/svmiller/svm-r-markdown-templates).
+The Latex templates and the general idea for this repo are modifications of the syllabus code and steps produced by [svmiller](https://github.com/svmiller/svm-r-markdown-templates).
 
 My Modifications:
 

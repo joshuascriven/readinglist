@@ -10,7 +10,7 @@ geometry: margin=0.85in
 title: "INR3933: Politics of International Law | (Covid) Syllabus"
 author: "Lecturer: Joshua Scriven"
 date: "Summer B 2020"
-quote: "[T]he blood of millions of men, numberless and unprecedented sufferings, useless slaughter and frightful ruin, are the sanction of the covenant which unites you in a solemn pledge which must change the future history of the world."
+quote: "[T]he blood of millions of men, numberless and unprecedented sufferings, useless slaughter, and frightful ruin, are the sanction of the covenant which unites you in a solemn pledge which must change the future history of the world."
 quoteauth: "Address of his Holiness Pope Paul VI to the United Nations (Oct. 4, 1965)"
 email: "jscriven@fsu.edu"
 web: "github.com/joshuascriven"
@@ -23,6 +23,8 @@ fontfamily: mathpazo
 fontsize: 10pt
 tables: yes
 ---
+
+<!-- created by https://github.com/joshuascriven April 2020-->
 
 ```{r loadpacks, echo = FALSE, message = FALSE}
 library(RefManageR) # needed for reference printing from bibfiles

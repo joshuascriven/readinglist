@@ -64,6 +64,8 @@ divider <- " & " # set divider for date ranges (e.g., '&', '-')
 
 ```
 
+<!-- created by https://github.com/joshuascriven April 2020-->
+
 ```{r date, echo = FALSE}
 start <- as.Date(topics$date_start, tryFormats = c("%Y-%m-%d", "%Y/%m/%d","%d-%b")) # verify correct date pattern  
 end <- as.Date(topics$date_end, tryFormats = c("%Y-%m-%d", "%Y/%m/%d","%d-%b")) # verify correct date pattern
