@@ -1,69 +1,45 @@
-Create weekly topical reading list PDF using rmarkdown, bib, and csv
+Create a syllabus with weekly topical reading list (or just the reading list) PDF using rmarkdown, bibfile, and csv. Students and researchers can use the reading list for categorizing references for a paper or research project. 
 
-The PDF produced creates 5-day work weeks for readings beginning at the first day chosen and ending for the number of weeks selected.
+The Latex templates and the genral idea for this repo are modifications of the syllabus code and steps produced by [svmiller](https://github.com/svmiller/svm-r-markdown-templates).
+
+My Modifications:
+
+- Introduce nameable sections for reading units, along with unit totals.
+- Allow for both required and supplemental (or whatever second category you choose) readings.
+- Simplify code to loop through reading list of any length.
+- Incorporate the option to include sources that are not fully styled references.
+- Provide an an option for custom dates (for complex weekly splits) in addition to the default setting of 5-day weeks.
+- Allow for a modern header with optional quote.
+- Produces optional grading scale and course components tables from csv files. (Great for users who like to update tables in Excel rather than markdown).
+
 ---
 
 ## Required 
-- A bibfile with unique keys already generated
-- A bibfile reader to extract the unique keys
-- A csv file named ```topics.csv``` with three columns labeled ```cite```, ```type```, and ```week```
-- An Rmarkdown editor such as [RStudio](https://www.rstudio.com/)
-- A [LaTeX](https://www.latex-project.org/get/) distribution (to compile the PDF)
-- The included ```svm-latex-syllabus.tex``` LaTex template
+- A bibfile with unique keys already generated.
+- A bibfile reader to extract the unique citation keys.
+- A file, ```topics.csv``` with atleast the ```topics``` column, and (optionally) the ```unit```,	```date_start```,	and ```date_end``` columns.
+- A csv file named ```classify.csv``` with three columns labeled ```cite```, ```type```, and ```unit```
+- An Rmarkdown compiler (I'm using [RStudio](https://www.rstudio.com/)).
+- A [LaTeX](https://www.latex-project.org/get/) distribution (to compile the PDF).
+- The LaTex template ```svm-latex-syllabus.tex``` is from  [svmiller](https://github.com/svmiller/). See [here](http://svmiller.com/blog/2016/07/r-markdown-syllabus/) for more on customizing the .tex file.
 
-## Languages
-If you are interested in more than light customization of the default output, the following languages will be helpful:
-- [Rmarkdown](https://rmarkdown.rstudio.com/authoring_quick_tour.html) can be thought of as a mixture of basic markdown markup language and R.
+## Preparing Your Data
 
+### classify.csv
 
-## Steps
+- ```cite``` alphanumeric citekeys (unique bib file entry keys).
+- ```type``` string values ```refs``` (for main readings) and ```sups``` (for supplementary readings). All other values being ignored. This is equivalent to 'commenting out' entries for future use.
+- ```unit``` integer values for the course reading unit.
 
-### Preparing the CSV
+### topics.csv
+- ```topics``` strings for unit titles.
+- ```unit``` (optional and not used) integer values for the course reading unit.
+- ```date_start``` (optional) date string indicating start of unit
+- ```date_end``` (optional) date string indicating end of unit
 
-- In the ```cite``` column of the csv file, paste all the citekeys (unique bib file entry keys).
-- The ```type``` column accepts two values, ```refs``` (for main readings) and ```sups``` (for supplementary readings) with all other values being ignored.
-- The ```week``` column accepts any number along the range of weeks desired. The example file has 15 weeks.
+### bibfile.bib
+- citekeys must be unique and should be distinguishable from any title you might manually assign to a reading. Regex is used to identify citekeys (default "[A-Za-z]:[0-9]"). When a non-citekey value is found among the citekeys, it is printed verbatim (as markdown) in the final document.
 
-#### Important! 
-There must be a block of the following code (shown below) for each week. For example, included Rmd file has 13 of the code blocks, so 13 units/weeks are printed in the PDF, although labeling stops at 18 in the included csv file.
+## In-code Customizations
 
-````
-
-`r j = j+1`
-##  `r advdate(mon, j)``r paste(topics[j],"|",length(refs[[j]]), "Readings")`
-```{r, echo = FALSE, results="asis"}
-if (length(refs[[j]])!=0) {
-  bib[refs[[j]]]
-}
-```
-
-### Supplementary `r paste("|",length(sups[[j]]), "Readings")`:
-```{r, echo = FALSE, results="asis"}
-if (length(sups[[j]])!=0) {
-  bib[sups[[j]]]
-}
-```
-````
-
-## Included Customizations
-
-The most common customizations are easily updated in lines 1-57. 
-
-### Header Arguments (line 1-25)
-- All the values enclosed with quotation marks can be edited and are self-explanatory.
-- fonts can be updated with ```fontfamily``` and ```header-inludes``` has a default option for spacing, which is passed to LaTex for compilation.
-
-### Other Options (line 34-57)
-- ```bibloc``` is a string for the name of the .bib file.
-- ```day0``` is the first Monday of the first week.
-- ```unit``` may be changed from the default "Week " to something like "Section " or something else entirely.
-- ```topicsIN``` is a string containing the name of the .csv file.
-- ```topics``` contains a character vector of strings for topic for each week.
-
-## Troubleshooting
-You might need to use ```devtools``` to download the ```RefManageR``` package.
-
-````
-install.packages("devtools")
-devtools::install_github("ropensci/RefManageR")
-````
+The code chunk ```userinput``` contains almost all modifications to make your own version of the syllabus/reading list. You might need to tinker with the ```date``` code chunk if your custom dates follow a different format than those I have included compatibility for.

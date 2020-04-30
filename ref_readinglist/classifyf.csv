@@ -1,6 +1,6 @@
-﻿cite,type,week
+﻿cite,type,unit
 Dessler:1991aa,refs,1
-Fearon:1991aa,refs,1
+"Fearon:1991aa	",refs,1
 King:1994aa,refs,1
 McDermott:2011aa,refs,1
 Singer:1961aa,refs,1
@@ -23,7 +23,7 @@ Hopf:1998aa,sups,2
 Rathbun:2011aa,sups,2
 Ruggie:1998aa,sups,2
 Branch:2011aa,refs,3
-hobbes1985leviathan,refs,3
+hobbes:1985leviathan,refs,3
 Krasner:1976aa,refs,3
 Busch:2007ab,,13
 Spruyt:1996aa,refs,3
@@ -31,7 +31,7 @@ Tilly:1993aa,refs,3
 NA,,6
 NA,,7
 NA,,8
-Weber:aa,refs,3
+Weber:1968,refs,3
 Acemoglu:2001aa,sups,3
 Bean:1973aa,sups,3
 Lake:1996aa,sups,3
@@ -58,7 +58,7 @@ Evangelista:1995aa,refs,5
 Horowitz:2010aa,refs,5
 Keck:1999aa,refs,5
 Moravcsik:1991aa,refs,5
-buthe2004governance,sups,5
+buthe:2004governance,sups,5
 Finnemore:1998aa,sups,5
 Gilli:2014aa,sups,5
 Donno:2014ab,,11

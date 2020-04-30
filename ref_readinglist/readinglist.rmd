@@ -1,0 +1,109 @@
+---
+output:
+  pdf_document:
+    keep_tex: true
+    fig_caption: yes
+    latex_engine: pdflatex
+    template: scriven_svm-latex-syllabus_rdlst.tex
+geometry: margin=0.85in
+
+title: "INR 5000: International Relations Core Seminar | Reading List"
+author: "Lecturer: Joshua Scriven"
+date: "Fall 2017"
+
+email: "jscriven@fsu.edu"
+web: "github.com/joshuascriven"
+officehours: "W 09:00-11:30"
+office: "233 Bellamy Building"
+classroom: "*133*"
+classhours: "TR 11:45-14:30 p.m." 
+
+fontfamily: mathpazo
+fontsize: 10pt
+header-includes:
+   - \linespread{1.05}
+---
+
+```{r loadpacks, echo = FALSE, message = FALSE}
+library(RefManageR) # needed for reference printing from bibfiles
+library(dplyr)
+```
+
+```{r functions, echo = FALSE, message = FALSE}
+custdate <- function(s, d, i, divider) {
+ s <- format(s[i], format="%m/%d")
+ d <- format(d[i], format="%m/%d")
+ i <- sprintf("%02d", i)
+ tmp <- paste(unit,i,sep='',", ", s, divider,d)
+ return(tmp)
+}
+
+advdate <- function(obj, adv) {
+ tmon <- obj + 7*(adv-1)
+ tfri <- obj + 4 + 7*(adv-1)
+ tmon <- format(tmon, format="%m/%d")
+ tfri <- format(tfri, format="%m/%d")
+ zadv <- sprintf("%02d", adv)
+ tmp <- paste(unit,zadv,sep='',", ", tmon," - ",tfri)
+ return(tmp)
+}
+```
+
+```{r userinput, echo = FALSE}
+topicsIN <- read.csv("classify.csv") # file containing and classifying your readings
+topics <- read.csv("topics.csv") # contains unit name and (optionally) the start and end date
+bibloc <- "bibfile.bib" # bibfile with bibentries
+bibpattern <- "[A-Za-z]:[0-9]" # regex pattern uniquely identifying bib entries in topicsIN
+unit <- "Week " # the term for each unit of readings (e.g., "week", "section", "module")
+not_main_readings <- "Supplementary" # term for readings that are not the main readings (e.g., "Suggested", "Supplemental", "Other")
+# !!! Unit options
+dating <- "auto" # set to auto or leave blank (custom)
+day0 <- "2020-05-11" # the first day of your course/reading schedule
+# !!! If using custom dating:
+divider <- " & " # set divider for date ranges (e.g., '&', '-')
+
+```
+
+```{r date, echo = FALSE}
+start <- as.Date(topics$date_start, tryFormats = c("%Y-%m-%d", "%Y/%m/%d","%d-%b")) # verify correct date pattern  
+end <- as.Date(topics$date_end, tryFormats = c("%Y-%m-%d", "%Y/%m/%d","%d-%b")) # verify correct date pattern
+topics <- as.character(topics$topics)
+day0 <- as.Date(day0)
+```
+
+```{r makebib, echo = FALSE}
+bib <- ReadBib(bibloc) # Change to whatever is your .bib file
+myopts <- BibOptions(bib.style = "authoryear", style="latex", first.inits=F, max.names = 20, no.print.fields = c("doi"), sorting = "nyt")
+```
+
+<!-- The remainder of the code will compile & print unit reading lists -->
+
+# Required Readings
+
+\Urlmuskip=0mu plus 2mu
+
+```{r echo=FALSE, message=FALSE, warning=TRUE, results="asis"}
+for(i in 1:length(topics)) {
+  ref <- as.character((topicsIN %>% filter(type == 'refs' & unit==i))$cite)
+  sup <- as.character((topicsIN %>% filter(type == 'sups' & unit==i))$cite)
+  if (length(ref)!=0) {
+    if(dating =="auto"){
+      cat("  \n##", advdate(day0, i), "~", topics[i],"|", length(ref), "Readings", "  \n")
+      } else {
+      cat("  \n##", custdate(start, end, i, divider), "~", topics[i],"|", length(ref), "Readings", "  \n")
+      }
+    cat(as.character(ref[grep(bibpattern, ref, invert=T)]), sep="  \n", "  \n")
+    if(length(bib[ref])!=0){
+      print(bib[ref])
+    }
+    }
+
+  if (length(sup)!=0) {
+    cat("  \n###", not_main_readings, " |", length(sup), "Readings", "  \n")
+    cat(as.character(sup[grep(bibpattern, sup, invert=T)]), sep="  \n", "  \n")
+    if(length(bib[sup])!=0){
+      print(bib[sup])
+    }
+    }
+}
+```
