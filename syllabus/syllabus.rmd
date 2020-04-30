@@ -85,7 +85,7 @@ myopts <- BibOptions(bib.style = "authoryear", style="latex", first.inits=F, max
 
 # Course Description
 
-In this course, students will use a combination of prerecorded lectures, tutorial sessions, group presentations, short quizzes, and an interactive simulation to cover topics in interntional law (IL) distributed across four modules:
+In this course, students will use a combination of prerecorded lectures, tutorial sessions, group presentations, short quizzes, and an interactive simulation to cover topics in international law (IL) distributed across four modules:
 
 1. What is international law and where is it found?
 2. Actors in international law: who takes part? 
@@ -113,7 +113,7 @@ bib["Dixon:2016aa"]
 
 # Covid-related Adjustments
 
-This accelerated 6-week course was originally designed for in-person classroom meetings five (5) days a week, but will now be delivered online without daily meetings. I have sought to incorporate features of both synchronous (live) and asynchronous (delayed) interaction to best facilitate learning, while accounting for the special circumstances students might now face. If a student needs additional accomodations, this should be indicated **in writing** within the first 2 weeks of the semester.
+This accelerated 6-week course was originally designed for in-person classroom meetings five (5) days a week, but will now be delivered on-line without daily meetings. I have sought to incorporate features of both synchronous (live) and asynchronous (delayed) interaction to best facilitate learning, while accounting for the special circumstances students might now face. If a student needs additional accommodations, this should be indicated **in writing** within the first 2 weeks of the semester.
 All links to external sites such as Zoom and office appointments, can be found on the course's Canvas homepage.
 
 \newpage
@@ -126,7 +126,7 @@ Your final course grade is a combination of scores according to the table shown 
 
 ### Quizzes & Final Exam
 
-Each module has a short quiz which can be completed at any time before the final day of the semester. Quizzes and the final exam are open-book. The Final is completed as a group assesment with a single answer sheet is submitted per group, along with and evaluations of each other's contribution.
+Each module has a short quiz which can be completed at any time before the final day of the semester. Quizzes and the final exam are open-book. The Final is completed as a group assessment with a single answer sheet is submitted per group, along with and evaluations of each other's contribution.
 
 ### Group Presentation
 
@@ -176,14 +176,14 @@ kable(list(composition,grading), caption = "Grade Composition and Grading Scale"
 - Students will not disrespect each other's religious, cultural, political, or ideological beliefs.
 - Students will accept each other's right to reasonably debate religious, cultural, political, or ideological beliefs of any kind.^[Here, a reasonable argument must present at least one statement for and one against your chosen point of view.] 
 
-## Rules for Online Interaction
+## Rules for On-line Interaction
 
 - You should be fully dressed as if you were physically attending a university class.
 - Caring for dependents is **not** considered distracting. Should the need arise, you are allowed to have people or pets **quietly sit** with you during video-enabled Zoom meetings.
 - Keep microphones on mute, unless you are answering or offering a question.
 - Please use the nonverbal features available to you on Zoom, where possible.
 - You may also silently use gestures you would normally use in a physical classroom environment, such as raising your hand.
-- **Remember: sarcasm is fine; joke within reason; and sexual harassment is a thing. Our online communications might not be conveyed as positively as our in-class interactions might.**
+- **Remember: sarcasm is fine; joke within reason; and sexual harassment is a thing. Our on-line communications might not be conveyed as positively as our in-class interactions might.**
 
 ## Syllabus Change Policy
 
