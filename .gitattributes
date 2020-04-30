@@ -1,0 +1,2 @@
+*.rmd linguist-documentation
+*.tex linguist-documentation=false
