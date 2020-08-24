@@ -16,21 +16,24 @@ email: "jscriven@fsu.edu"
 web: "github.com/joshuascriven"
 officehours: "MW 12:30--13:45"
 office: "[Online](https://fsu.zoom.us/meeting)"
-classroom: "[Online](https://fsu.zoom.us/meeting)"
-classhours: "M--F 11:00--12:15"
+Zoom Meeting: "[Online](https://fsu.zoom.us/meeting)"
+classhours: "N/A"
 seal: "seal"
 fontfamily: mathpazo
 fontsize: 10pt
 tables: yes
 ---
 
-<!-- created by https://github.com/joshuascriven April 2020-->
+<!-- created by https://github.com/joshuascriven August 2020-->
 
 ```{r loadpacks, echo = FALSE, message = FALSE}
 library(RefManageR) # needed for reference printing from bibfiles
-library(dplyr)
+# library(dplyr)
+library(tidyverse)
 library(knitr)
 library(kableExtra)
+library(readxl)
+knitr::opts_chunk$set(message = FALSE)
 ```
 
 ```{r functions, echo = FALSE, message = FALSE}
@@ -54,12 +57,16 @@ advdate <- function(obj, adv) {
 ```
 
 ```{r userinput, echo = FALSE}
-classify <- read.csv("classify.csv") # file containing and classifying your readings
-course_parts <- read.csv("course_parts.csv") # contains unit name and (optionally) the start and end date
-composition <- read.csv("composition.csv") 
-grading <- read.csv("grading.csv") 
+path <- "syllabus_parts.xlsx"
+
+syllabus <- path %>%
+        excel_sheets() %>%
+        set_names() %>%
+       map(read_excel,
+           path = path)
+
 bibloc <- "bibfile.bib" # bibfile with bibentries
-bibpattern <- "[A-Za-z]:[0-9]" # regex pattern uniquely identifying bib entries in classify
+bibpattern <- "[A-Za-z]:[0-9]" # regex pattern uniquely identifying bib entries in syllabus$classify
 unit <- "Module " # the term for each unit of readings (e.g., "week", "section", "module")
 not_main_readings <- "Cases" # term for readings that are not the main readings (e.g., "Suggested", "Supplemental", "Other")
 
@@ -72,11 +79,11 @@ divider <- " & " # set divider for date ranges (e.g., '&', '-')
 ```
 
 ```{r date, echo = FALSE}
-start <- as.Date(course_parts$date_start, tryFormats = c("%Y-%m-%d", "%Y/%m/%d","%d-%b")) # verify correct date pattern  
-end <- as.Date(course_parts$date_end, tryFormats = c("%Y-%m-%d", "%Y/%m/%d","%d-%b")) # verify correct date pattern
-topics <- as.character(course_parts$topics)
+start <- as.Date(syllabus$course_parts$date_start, tryFormats = c("%Y-%m-%d", "%Y/%m/%d","%d-%b")) # verify correct date pattern  
+end <- as.Date(syllabus$course_parts$date_end, tryFormats = c("%Y-%m-%d", "%Y/%m/%d","%d-%b")) # verify correct date pattern
+topics <- as.character(syllabus$course_parts$topics)
 day0 <- as.Date(day0)
-names(grading) <- c("Grade", "Range", "Grade", "Range", "Grade", "Range")
+names(syllabus$grading) <- c("Grade", "Range", "Grade", "Range", "Grade", "Range")
 ```
 
 ```{r makebib, echo = FALSE}
@@ -149,11 +156,11 @@ The Final Project will comprise the last two weeks of the semester. For the proj
 
 ## Scales  
 
-This course uses the grading scale displayed here. Due dates are rare, but when they do exist, they should be adhered to. Assignments will receive a deduction of 5 percent for each day they are late (i.e., SMTWRFA). Students are expected to complete missing assignments before seeking any extra credit (offered to the entire class). Extra credit will not be assigned within the last two weeks of the semester.
+This course uses the syllabus$grading scale displayed here. Due dates are rare, but when they do exist, they should be adhered to. Assignments will receive a deduction of 5 percent for each day they are late (i.e., SMTWRFA). Students are expected to complete missing assignments before seeking any extra credit (offered to the entire class). Extra credit will not be assigned within the last two weeks of the semester.
 
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE, results="asis"}
-kable(list(composition,grading), caption = "Grade Composition and Grading Scale",
+kable(list(syllabus$composition,syllabus$grading), caption = "Grade syllabus$Composition and syllabus$Grading Scale",
       format = "latex",
       booktabs = TRUE) %>%
   kable_styling(latex_options = "hold_position")
@@ -183,7 +190,7 @@ kable(list(composition,grading), caption = "Grade Composition and Grading Scale"
 
 ## Syllabus Change Policy
 
-Except for changes that substantially affect implementation of the evaluation (grading) statement, this syllabus is a guide for the course and is subject to change with advance notice.
+Except for changes that substantially affect implementation of the evaluation (syllabus$grading) statement, this syllabus is a guide for the course and is subject to change with advance notice.
 
 # University Policies
 
@@ -211,8 +218,8 @@ The class schedule is found on the *Syllabus* page on Canvas. They correspond to
 
 ```{r echo=FALSE, message=FALSE, warning=TRUE, results="asis"}
 for(i in 1:length(topics)) {
-  ref <- as.character((classify %>% filter(type == 'refs' & unit==i))$cite)
-  sup <- as.character((classify %>% filter(type == 'sups' & unit==i))$cite)
+  ref <- as.character((syllabus$classify %>% filter(type == 'refs' & unit==i))$cite)
+  sup <- as.character((syllabus$classify %>% filter(type == 'sups' & unit==i))$cite)
   if (length(ref)!=0) {
     if(dating =="auto"){
       cat("  \n##", advdate(day0, i), "~", topics[i],"|", length(ref), "Readings", "  \n")
