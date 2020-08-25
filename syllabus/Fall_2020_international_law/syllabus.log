@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  23 AUG 2020 18:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  25 AUG 2020 11:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -462,7 +462,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-<seal.png, id=132, 220.825pt x 220.825pt>
+<seal.png, id=140, 220.825pt x 220.825pt>
 File: seal.png Graphic file (type png)
 <use seal.png>
 Package pdftex.def Info: seal.png  used on input line 144.
@@ -500,35 +500,30 @@ File: Uding.fd 1996/02/01 v1.0 BBding font definitions
 
 {/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./seal.
 png>]
-LaTeX Font Info:    Trying to load font information for TS1+ppl on input line 2
-98.
+LaTeX Font Info:    Trying to load font information for TS1+ppl on input line 3
+08.
 (/usr/local/texlive/2020/texmf-dist/tex/latex/psnfss/ts1ppl.fd
 File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
 )
-Overfull \hbox (9.46974pt too wide) in paragraph at lines 331--337
-\T1/ppl/m/n/10 should be ad-hered to. As-sign-ments will re-ceive a de-duc-tion
- of 5 per-cent for each day they are late (i.e., SMTWRFA).
- []
-
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [2] [3] [4] 
 AED: lastpage setting LastPage
 [5] [6]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 607.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 607.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 615.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 615.
 (./syllabus.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 607.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 607.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 615.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 615.
 Package rerunfilecheck Info: File `syllabus.out' has not changed.
-(rerunfilecheck)             Checksum: 17A1A8036EBBB3A9E8F6278CDFEDDF5B;7479.
+(rerunfilecheck)             Checksum: F863D953D9CBB4766C6609ECC2B1F3A2;8045.
  ) 
 Here is how much of TeX's memory you used:
- 12272 strings out of 480608
- 177683 string characters out of 5903631
- 449389 words of memory out of 5000000
- 27853 multiletter control sequences out of 15000+600000
+ 12280 strings out of 480608
+ 177951 string characters out of 5903631
+ 450291 words of memory out of 5000000
+ 27857 multiletter control sequences out of 15000+600000
  560514 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  34i,11n,45p,1197b,353s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -540,10 +535,10 @@ live/2020/texmf-dist/fonts/type1/public/niceframe-type1/bbding10.pfb></usr/loca
 l/texlive/2020/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texli
 ve/2020/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2020
 /texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on syllabus.pdf (6 pages, 108853 bytes).
+Output written on syllabus.pdf (6 pages, 108789 bytes).
 PDF statistics:
- 263 PDF objects out of 1000 (max. 8388607)
- 246 compressed objects within 3 object streams
- 87 named destinations out of 1000 (max. 500000)
- 262 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 272 PDF objects out of 1000 (max. 8388607)
+ 255 compressed objects within 3 object streams
+ 91 named destinations out of 1000 (max. 500000)
+ 278 words of extra memory for PDF output out of 10000 (max. 10000000)
 

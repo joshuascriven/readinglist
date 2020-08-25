@@ -9,14 +9,14 @@ geometry: margin=0.85in
 
 title: "INR3933: Politics of International Law | (Online Instruction)"
 author: "Lecturer: Joshua Scriven"
-date: "Summer B 2020"
+date: "Fall 2020"
 quote: "[T]he blood of millions of men, numberless and unprecedented sufferings, useless slaughter, and frightful ruin, are the sanction of the covenant which unites you in a solemn pledge which must change the future history of the world."
 quoteauth: "Address of his Holiness Pope Paul VI to the United Nations (Oct. 4, 1965)"
 email: "jscriven@fsu.edu"
 web: "github.com/joshuascriven"
-officehours: "MW 12:30--13:45"
-office: "[Online](https://fsu.zoom.us/meeting)"
-Zoom Meeting: "[Online](https://fsu.zoom.us/meeting)"
+officehours: "Tues/Thurs 13:30--15:30"
+office: "Zoom link Canvas homepage"
+classroom: "Zoom link Canvas homepage"
 classhours: "N/A"
 seal: "seal"
 fontfamily: mathpazo
@@ -67,14 +67,14 @@ syllabus <- path %>%
 
 bibloc <- "bibfile.bib" # bibfile with bibentries
 bibpattern <- "[A-Za-z]:[0-9]" # regex pattern uniquely identifying bib entries in syllabus$classify
-unit <- "Module " # the term for each unit of readings (e.g., "week", "section", "module")
+unit <- "Reading Set " # the term for each unit of readings (e.g., "week", "section", "module")
 not_main_readings <- "Cases" # term for readings that are not the main readings (e.g., "Suggested", "Supplemental", "Other")
 
 # !!! Unit options
 dating <- "custom" # set to auto or leave blank (custom)
 day0 <- "2020-05-11" # the first day of your course/reading schedule
 # !!! If using custom dating:
-divider <- " & " # set divider for date ranges (e.g., '&', '-')
+divider <- " - " # set divider for date ranges (e.g., '&', '-')
 
 ```
 
@@ -93,7 +93,7 @@ myopts <- BibOptions(bib.style = "authoryear", style="latex", first.inits=F, max
 
 # Course Description
 
-In this course, students will use a combination of prerecorded lectures, tutorial sessions, group presentations, short quizzes, and an interactive simulation to cover topics in international law (IL) distributed across four modules:
+In this course, students will use a combination of prerecorded lectures, discussion boards, group presentations, short quizzes, and a group project to cover topics in international law (IL) distributed across six modules which collectively answer four questions:
 
 1. What is international law and where is it found?
 2. Actors in international law: who takes part? 
@@ -117,6 +117,11 @@ This one-semester course is intended to:
 bib["Dixon:2016aa"]
 ```
 
+# Attendance
+
+This class is taught asynchronously, meaning that we will not all meet regularly at any point in the semester. Please be aware, however, that group projects require coordination within smaller groups to meet within the course Zoom meeting room for recording presentations. Zoom meeting rooms may also be used by these smaller groups for planning for either the group presentations or the Final Project: Part 1.
+
+
 \newpage
 
 # Grades
@@ -127,7 +132,7 @@ Your final course grade is a combination of scores according to the table shown 
 
 ### Quizzes
 
-Each module has a short, timed quiz which must be completed before beggining the subsequent modules. Quizzes are open-book. The course quiz with the lowest grade is automatically dropped.
+Each of the six (6) course modules has a short, timed quiz which must be completed by the due date indicated. Quizzes are open-book. The course quiz with the lowest grade is automatically dropped.
 
 ### Group Presentations
 
@@ -156,7 +161,7 @@ The Final Project will comprise the last two weeks of the semester. For the proj
 
 ## Scales  
 
-This course uses the syllabus$grading scale displayed here. Due dates are rare, but when they do exist, they should be adhered to. Assignments will receive a deduction of 5 percent for each day they are late (i.e., SMTWRFA). Students are expected to complete missing assignments before seeking any extra credit (offered to the entire class). Extra credit will not be assigned within the last two weeks of the semester.
+This course uses the grading scale displayed here. Where they exist, due dates should be strictly adhered to. Assignments will receive a deduction of 5 percent for each calendar day they are late. Students are expected to complete missing assignments before seeking any extra credit (which is always offered to the entire class). Extra credit will not be assigned within the last two weeks of the semester.
 
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE, results="asis"}
@@ -174,23 +179,23 @@ kable(list(syllabus$composition,syllabus$grading), caption = "Grade syllabus$Com
 ## Student Responsibility Highlights
 
 - Students should log on to Canvas at least once a day to check for course updates. All links to external sites such as Zoom and office appointments, can be found on the course's Canvas homepage.
-- Student should review module readings and lectures before tutorial sessions.
+- Student should review module readings and lectures before discussion sessions.
 - Students should contribute equally to group work and identify classmates who do not.
 - Students will not disrespect each other's religious, cultural, political, or ideological beliefs.
 - Students will accept each other's right to reasonably debate religious, cultural, political, or ideological beliefs of any kind.^[Here, a reasonable argument must present at least one statement for and one against your chosen point of view.] 
 
 ## Rules for On-line Interaction
 
-- You should be fully dressed as if you were physically attending a university class.
-- Caring for dependents is **not** considered distracting. Should the need arise, you are allowed to have people or pets **quietly sit** with you during video-enabled Zoom meetings.
-- Keep microphones on mute, unless you are answering or offering a question.
-- Please use the nonverbal features available to you on Zoom, where possible.
-- You may also silently use gestures you would normally use in a physical classroom environment, such as raising your hand.
+- When appearing on camera, you should be fully dressed as if you were physically attending a university class.
+<!-- - Caring for dependents is **not** considered distracting. Should the need arise, you are allowed to have people or pets **quietly sit** with you during video-enabled Zoom meetings. -->
+<!-- - Keep microphones on mute, unless you are answering or offering a question. -->
+<!-- - Please use the nonverbal features available to you on Zoom, where possible. -->
+<!-- - You may also silently use gestures you would normally use in a physical classroom environment, such as raising your hand. -->
 - **Remember: sarcasm is fine; joke within reason; and sexual harassment is a thing. Our on-line communications might not be conveyed as positively as our in-class interactions might.**
 
 ## Syllabus Change Policy
 
-Except for changes that substantially affect implementation of the evaluation (syllabus$grading) statement, this syllabus is a guide for the course and is subject to change with advance notice.
+Except for changes that substantially affect implementation of the evaluation (grading) statement, this syllabus is a guide for the course and is subject to change with advance notice.
 
 # University Policies
 
@@ -201,9 +206,12 @@ I do not take attendance in this course. Excused absences include documented ill
 
 The Florida State University Academic Honor Policy outlines the University's expectations for the integrity of students' academic work, the procedures for resolving alleged violations of those expectations, and the rights and responsibilities of students and faculty members throughout the process. Students are responsible for reading the Academic Honor Policy and for living up to their pledge to "...be honest and truthful and... [to] strive for personal and institutional integrity at Florida State University." (For more details see the FSU Academic Honor Policy and procedures for addressing alleged violationsLinks to an external site..)
 
-## Americans With Disabilities Act
+## Americans With Disabilities Act (ADA)
 
 Students with disabilities needing academic accommodation should (1) register with and provide documentation to the Student Disability Resource Center and (2) bring a letter to the instructor indicating the need for accommodation and what type. Please note that instructors are not allowed to provide classroom accommodation to a student until appropriate verification from the Student Disability Resource Center has been provided. This syllabus and other class materials are available in alternative format upon request. For more information about services available to FSU students with disabilities, contact the Student Disability Resource Center (SDRC) 108 Student Services Building | Florida State University | (850) 644-9566 (voice) | (850) 644-8504 (TDD) | Email: sdrc@admin.fsu.edu
+
+## Notification of Accomodation
+Religious and ADA accomodations must be secured within the first 3 weeks of the semester. You cannot request acommodations on an assignment after that assignment has become due. Accomodations will not be discussed with other students.
 
 
 \newpage
