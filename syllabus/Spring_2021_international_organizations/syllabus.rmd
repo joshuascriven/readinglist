@@ -158,7 +158,7 @@ This course uses the grading scale displayed here. Where they exist, due dates s
 
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE, results="asis"}
-kable(list(syllabus$composition,syllabus$grading), caption = "Grade syllabus$Composition and syllabus$Grading Scale",
+kable(list(syllabus$composition,syllabus$grading), caption = "Grade Composition and Grading Scale",
       format = "latex",
       booktabs = TRUE) %>%
   kable_styling(latex_options = "hold_position")
@@ -177,7 +177,7 @@ kable(list(syllabus$composition,syllabus$grading), caption = "Grade syllabus$Com
 
 ## Rules for On-line Interaction
 
-- When appearing on camera, you should be fully dressed as if you were physically attending a university class.
+- When appearing on camera, you should be fully dressed as if you were physically attending a meeting on campus.
 <!-- - Caring for dependents is **not** considered distracting. Should the need arise, you are allowed to have people or pets **quietly sit** with you during video-enabled Zoom meetings. -->
 <!-- - Keep microphones on mute, unless you are answering or offering a question. -->
 <!-- - Please use the nonverbal features available to you on Zoom, where possible. -->
