@@ -1,0 +1,207 @@
+---
+output:
+  pdf_document:
+    keep_tex: true
+    fig_caption: yes
+    latex_engine: pdflatex
+    template: scriven_svm-latex-syllabus.tex
+geometry: margin=0.85in
+
+title: "INR3933: International Organizations | (Online Instruction)"
+author: "Lecturer: Joshua Scriven"
+date: "Spring 2021"
+quote: "[T]he blood of millions of men, numberless and unprecedented sufferings, useless slaughter, and frightful ruin, are the sanction of the covenant which unites you in a solemn pledge which must change the future history of the world."
+quoteauth: "Address of his Holiness Pope Paul VI to the United Nations (Oct. 4, 1965)"
+email: "jscriven@fsu.edu"
+# web: "github.com/joshuascriven"
+officehours: "T/R 13:30--14:30 (by appointment)"
+office: "Zoom link on Canvas"
+classroom: "Zoom link on Canvas"
+classhours: "T/R 12:00--13:30 (see below)"
+seal: "seal"
+fontfamily: mathpazo
+fontsize: 10pt
+tables: yes
+---
+
+<!-- created by https://github.com/joshuascriven August 2020-->
+
+```{r loadpacks, echo = FALSE, message = FALSE}
+library(RefManageR) # needed for reference printing from bibfiles
+# library(dplyr)
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+library(readxl)
+knitr::opts_chunk$set(message = FALSE)
+```
+
+```{r functions, echo = FALSE, message = FALSE}
+custdate <- function(s, d, i, divider) {
+ s <- format(s[i], format="%m/%d")
+ d <- format(d[i], format="%m/%d")
+ i <- sprintf("%02d", i)
+ tmp <- paste(unit,i,sep='',", ", s, divider,d)
+ return(tmp)
+}
+
+advdate <- function(obj, adv) {
+ tmon <- obj + 7*(adv-1)
+ tfri <- obj + 4 + 7*(adv-1)
+ tmon <- format(tmon, format="%m/%d")
+ tfri <- format(tfri, format="%m/%d")
+ zadv <- sprintf("%02d", adv)
+ tmp <- paste(unit,zadv,sep='',", ", tmon," - ",tfri)
+ return(tmp)
+}
+```
+
+```{r userinput, echo = FALSE}
+path <- "syllabus_parts.xlsx"
+
+syllabus <- path %>%
+        excel_sheets() %>%
+        set_names() %>%
+       map(read_excel,
+           path = path)
+
+bibloc <- "bibfile.bib" # bibfile with bibentries
+bibpattern <- "[A-Za-z]:[0-9]" # regex pattern uniquely identifying bib entries in syllabus$classify
+unit <- "Reading Set " # the term for each unit of readings (e.g., "week", "section", "module")
+not_main_readings <- "Cases" # term for readings that are not the main readings (e.g., "Suggested", "Supplemental", "Other")
+
+# !!! Unit options
+dating <- "custom" # set to auto or leave blank (custom)
+day0 <- "2020-05-11" # the first day of your course/reading schedule
+# !!! If using custom dating:
+divider <- " - " # set divider for date ranges (e.g., '&', '-')
+
+```
+
+```{r date, echo = FALSE}
+start <- as.Date(syllabus$course_parts$date_start, tryFormats = c("%Y-%m-%d", "%Y/%m/%d","%d-%b")) # verify correct date pattern  
+end <- as.Date(syllabus$course_parts$date_end, tryFormats = c("%Y-%m-%d", "%Y/%m/%d","%d-%b")) # verify correct date pattern
+topics <- as.character(syllabus$course_parts$topics)
+day0 <- as.Date(day0)
+names(syllabus$grading) <- c("Grade", "Range", "Grade", "Range", "Grade", "Range")
+```
+
+```{r makebib, echo = FALSE}
+bib <- ReadBib(bibloc) # Change to whatever is your .bib file
+myopts <- BibOptions(bib.style = "authoryear", style="latex", first.inits=F, max.names = 20, no.print.fields = c("doi"), sorting = "nyt")
+```
+
+# Course Description
+
+In this course, students will use a combination of lectures, live debate, and research projects to cover topics in the study of international organizations (IOs) distributed across seven modules which collectively answer four questions:
+
+1. What are IOs and why do they exist?
+2. Are IOs independent actors in international relations?
+3. Do IOs have a positive, negative, or null effect on the behavior of international actors?
+
+
+# Learning Objectives
+
+This one-semester course is intended to:
+
+1. introduce the fundamental concepts surrounding IOs and their relationship with other international actors;
+2. improve your understanding of the historical and potential role of international organizations;
+3. help you analyze the interplay between IO delegation and state sovereignty;
+4. examine circumstances where IOs have contributed to stability and prosperity in the international community, while accounting for instances where they have been a source of inefficiency and inequality;
+5. discuss whether IOs can be decribed as 'necessary' for international governance.
+
+# Required Textbook
+
+```{r echo=FALSE, message=FALSE, warning=TRUE, results="asis"}
+bib["hurd2020international"]
+```
+
+# Attendance
+
+We meet for class every Thursday and every other Tuesday of the semester, following the schedule available on Canvas. Discussion meetings, which occur every other Thursday (as indicated in the course schedule) last for 1.5 hours, in contrast to lecture meetings, which last 1.25 hours. Attendance is not required, but groups are encouraged to indicate absences when evaluating members who have not contributed *and* are not present for group work, such as in-class discussions.
+
+When applicable, excused absences include documented illness, deaths in the family and other documented crises, call to active military duty or jury duty, religious holy days, and official University activities. These absences will be accommodated in a way that does not arbitrarily penalize students who have a valid excuse. Consideration will also be given to students whose dependent children experience serious illness.
+
+# Grades
+
+## Composition
+
+Your final course grade is a combination of scores according to the table shown below.
+
+### Topical Discussions (Group Grade, Individually Weighted)
+
+Students will participate in each module's discussion, live on Zoom on the Thursdays indicated. It is expected that both groups and individual students come prepared to give responses during these discussions, as the discussion questions (which pertain to the module's subject matter) will be provided beforehand. The grade a student receives for his/her discussion response participation will be based on the professor's evaluation of his/her group's contribution to the discussion, and weighted (adjusted) by their group members' peer evaluations of their contributions to the same, ***which must be completed within the last 5 minutes of every discussion meeting, before leaving the Zoom session***.
+
+### Group Research Project (Group Grade, Individually Weighted)
+
+Each group will be assigned a  research project on an international organization. This will be the international organization that shares the name of their group, unless the group unanimously votes otherwise. There are two parts to the project. 
+
+- **Part 1** requires groups to submit a set of discussion questions (i.e., questions for which there are valid, divergent responses). Groups will provide the class with questions for the topical discussion by the Tuesday prior to that discussion.
+- **Part 2** requires the creation of a PDF slideshow which: 
+  - introduces the class to the organization and analyzes its historical origins and institutional structure, and 
+  - evaluates whether and how the organization matters in world politics, using examples from the text, lecture, or personal research. Groups will present on their research during the applicable topical discussion. Presentations should last between 10-15 minutes.
+  
+The grade a student receives for this assignment will be based on the professor's evaluation of their group's delivery of both the presenation and the discussion, which is then weighted (adjusted) by their group members' peer evaluations of their contributions to the same, ***which must be completed within the last 5 minutes of every discussion meeting, before leaving the Zoom session.***
+
+
+### Reading Guides (Individual Grade)
+
+For each module, students complete this individual-work assignment as a way to explore more complex concepts presented in the reading materials, which is  helpful for a proper undertanding of the semester's coursework as a whole. A reading guide consists of a set of questions directly related to a module's readings. Students are, therefore,neither encouraged  nor expected to turn to outside resources to complete the reading guides.
+
+### Final Exam (Individual Grade)
+
+The final exam is a multiple choice quiz that is cumulative, open-book, and comprises questions drawn from the lecture slides and assigned readings (and therefore, the reading guides as well). It is timed, and completed individually during finals week.
+
+## Scales  
+
+This course uses the grading scale displayed here. Where they exist, due dates should be strictly adhered to. Assignments will receive a deduction of 5 percent for each calendar day they are late. Students are expected to complete missing assignments before seeking any extra credit (which is always offered to the entire class). Extra credit will not be assigned within the last two weeks of the semester.
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, results="asis"}
+kable(list(syllabus$composition,syllabus$grading), caption = "Grade syllabus$Composition and syllabus$Grading Scale",
+      format = "latex",
+      booktabs = TRUE) %>%
+  kable_styling(latex_options = "hold_position")
+
+```
+
+# Course Policies 
+
+## Student Responsibility Highlights
+
+- Students should log on to Canvas at least once a day to check for course updates. All links to external sites such as Zoom and office appointments, can be found on the course's Canvas homepage.
+- Student should review module readings and lectures before discussion sessions.
+- Students should contribute equally to group work and identify classmates who do not.
+- Students will not disrespect each others religious, cultural, political, or ideological beliefs.
+- Students will accept each others right to reasonably debate religious, cultural, political, or ideological beliefs of any kind.^[Here, a reasonable argument must present at least one statement for and one against your chosen point of view.] 
+
+## Rules for On-line Interaction
+
+- When appearing on camera, you should be fully dressed as if you were physically attending a university class.
+<!-- - Caring for dependents is **not** considered distracting. Should the need arise, you are allowed to have people or pets **quietly sit** with you during video-enabled Zoom meetings. -->
+<!-- - Keep microphones on mute, unless you are answering or offering a question. -->
+<!-- - Please use the nonverbal features available to you on Zoom, where possible. -->
+<!-- - You may also silently use gestures you would normally use in a physical classroom environment, such as raising your hand. -->
+- **Remember: sarcasm is fine; joke within reason; and sexual harassment is real. Try to be aware and understanding of the fact that our on-line communications might not be conveyed as positively as our in-class interactions might.**
+
+## Syllabus Change Policy
+
+Except for changes that substantially affect implementation of the evaluation (grading) statement, this syllabus is a guide for the course and is subject to change with advance notice.
+
+# University Policies
+
+## Academic Honor Policy
+
+The Florida State University Academic Honor Policy outlines the University's expectations for the integrity of students' academic work, the procedures for resolving alleged violations of those expectations, and the rights and responsibilities of students and faculty members throughout the process. Students are responsible for reading the Academic Honor Policy and for living up to their pledge to "...be honest and truthful and... [to] strive for personal and institutional integrity at Florida State University." (For more details see the FSU Academic Honor Policy and procedures for addressing alleged violations Links to an external site..)
+
+## Americans With Disabilities Act (ADA)
+
+Students with disabilities needing academic accommodation should (1) register with and provide documentation to the Student Disability Resource Center and (2) bring a letter to the instructor indicating the need for accommodation and what type. Please note that instructors are not allowed to provide classroom accommodation to a student until appropriate verification from the Student Disability Resource Center has been provided. This syllabus and other class materials are available in alternative format upon request. For more information about services available to FSU students with disabilities, contact the Student Disability Resource Center (SDRC) 108 Student Services Building | Florida State University | (850) 644-9566 (voice) | (850) 644-8504 (TDD) | Email: sdrc@admin.fsu.edu
+
+## Notification of Accommodation
+Religious and ADA accommodations must be secured within the first 3 weeks of the semester. You cannot request accommodations on an assignment after that assignment has become due. Accommodations will not be discussed with other students.
+
+
+
+
+

@@ -1,0 +1,478 @@
+% original template by svmiller
+% modifications my joshuascriven
+
+\documentclass[10pt,]{article}
+\usepackage[margin=0.85in]{geometry}
+\usepackage[hyphens]{url}
+\usepackage{float, bbding}
+\usepackage{wrapfig}
+\newcommand*{\authorfont}{\fontfamily{phv}\selectfont}
+\usepackage[]{mathpazo}
+\usepackage{abstract}
+\renewcommand{\abstractname}{}    % clear the title
+\renewcommand{\absnamepos}{empty} % originally center
+\newcommand{\blankline}{\quad\pagebreak[2]}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{longtable,booktabs}
+
+\usepackage{parskip}
+\usepackage{titlesec}
+\titlespacing\section{0pt}{12pt plus 4pt minus 2pt}{6pt plus 2pt minus 2pt}
+\titlespacing\subsection{0pt}{12pt plus 4pt minus 2pt}{6pt plus 2pt minus 2pt}
+
+\titleformat*{\subsubsection}{\normalsize\itshape}
+
+\usepackage{titling}
+\setlength{\droptitle}{-.25cm}
+
+%\setlength{\parindent}{0pt}
+%\setlength{\parskip}{6pt plus 2pt minus 1pt}
+%\setlength{\emergencystretch}{3em}  % prevent overfull lines
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{lastpage}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\footrulewidth}{0.0pt}
+\lhead{}
+\chead{}
+\rhead{\footnotesize INR3933: International Organizations \textbar{}
+(Online Instruction) -- Spring 2021}
+\lfoot{}
+\cfoot{\small \thepage/\pageref*{LastPage}}
+\rfoot{}
+
+\fancypagestyle{firststyle}
+{
+\renewcommand{\headrulewidth}{0pt}%
+   \fancyhf{}
+   \fancyfoot[C]{\small \thepage/\pageref*{LastPage}}
+}
+
+%\def\labelitemi{--}
+%\usepackage{enumitem}
+%\setitemize[0]{leftmargin=25pt}
+%\setenumerate[0]{leftmargin=25pt}
+
+
+\makeatletter
+\@ifpackageloaded{hyperref}{}{%
+\ifxetex
+  \usepackage[setpagesize=false, % page size defined by xetex
+              unicode=false, % unicode breaks when used with xetex
+              xetex]{hyperref}
+\else
+  \usepackage[unicode=true]{hyperref}
+\fi
+}
+\@ifpackageloaded{xcolor}{
+    \PassOptionsToPackage{usenames,dvipsnames}{xcolor}
+}{%
+    \usepackage[usenames,dvipsnames]{xcolor}
+}
+\makeatother
+\hypersetup{breaklinks=true,
+            bookmarks=true,
+            pdfauthor={ ()},
+            pdfkeywords = {},
+            pdftitle={INR3933: International Organizations \textbar{}
+(Online Instruction)},
+            colorlinks=true,
+            citecolor=Sepia,
+            urlcolor=Sepia,
+            linkcolor=Sepia,
+            pdfborder={0 0 0}}
+\urlstyle{same}  % don't use monospace font for urls
+
+
+\setcounter{secnumdepth}{0}
+
+\usepackage{longtable}
+
+
+
+
+\usepackage{graphicx}
+\usepackage{setspace}
+
+% Remove the author field and the space associated
+% from the definition of maketitle!
+\makeatletter
+\renewcommand{\@maketitle}{
+\newpage
+ \null
+ \vskip 2em%
+ \begin{center}%
+  {\LARGE \@title \par}%
+  \@date
+  
+    \includegraphics[width=30mm,scale=0.5]{seal}
+   \end{center}%
+ \par} \makeatother
+ 
+
+\title{INR3933: International Organizations \textbar{} (Online
+Instruction)}
+\author{Lecturer: Joshua Scriven}
+\date{Spring 2021}
+
+
+
+
+%%%%% tables that span multiple pages
+\usepackage{longtable}
+
+%%%%color in tables
+\usepackage{xcolor,colortbl}
+
+%%%%for resizing tables
+\usepackage{adjustbox}
+
+\newcommand{\mc}[2]{\multicolumn{#1}{c}{#2}}
+\definecolor{Gray}{gray}{0.85}
+\definecolor{LightCyan}{rgb}{0.88,1,1}
+
+
+\begin{document}
+
+		\maketitle
+	
+
+		\thispagestyle{firststyle}
+
+\begin{center}
+\begin{tabular}{llccll}
+\hline
+\rowcolor{Gray}
+Instructor: & Joshua Scriven &          \hspace{3cm}           &
+Email: & \href{mailto:jscriven@fsu.edu}{\nolinkurl{jscriven@fsu.edu}}\\
+
+Classroom: &  Zoom link on Canvas & &
+Class Time: & T/R 12:00--13:30 (see below)\\
+Office: & Zoom link on Canvas & &
+Office Hours: & T/R 13:30--14:30 (by appointment)\\
+\hline
+\end{tabular}
+
+\begin{minipage}{5.2in}
+  \begin{flushleft}
+    {\color{Gray}{\RectangleBold}} ~{\footnotesize ``{[}T{]}he blood of
+millions of men, numberless and unprecedented sufferings, useless
+slaughter, and frightful ruin, are the sanction of the covenant which
+unites you in a solemn pledge which must change the future history of
+the world.'' --Address of his Holiness Pope Paul VI to the United
+Nations (Oct.~4, 1965)}\newline
+  \end{flushleft}
+\end{minipage}
+
+
+\end{center}
+
+\vspace{2mm}
+
+
+\hypertarget{course-description}{%
+\section{Course Description}\label{course-description}}
+
+In this course, students will use a combination of lectures, live
+debate, and research projects to cover topics in the study of
+international organizations (IOs) distributed across seven modules which
+collectively answer four questions:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  What are IOs and why do they exist?
+\item
+  Are IOs independent actors in international relations?
+\item
+  Do IOs have a positive, negative, or null effect on the behavior of
+  international actors?
+\end{enumerate}
+
+\hypertarget{learning-objectives}{%
+\section{Learning Objectives}\label{learning-objectives}}
+
+This one-semester course is intended to:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  introduce the fundamental concepts surrounding IOs and their
+  relationship with other international actors;
+\item
+  improve your understanding of the historical and potential role of
+  international organizations;
+\item
+  help you analyze the interplay between IO delegation and state
+  sovereignty;
+\item
+  examine circumstances where IOs have contributed to stability and
+  prosperity in the international community, while accounting for
+  instances where they have been a source of inefficiency and
+  inequality;
+\item
+  discuss whether IOs can be decribed as `necessary' for international
+  governance.
+\end{enumerate}
+
+\hypertarget{required-textbook}{%
+\section{Required Textbook}\label{required-textbook}}
+
+Hurd, Ian (2020).
+\emph{International organizations: politics, law, practice}. 4th ed.
+Cambridge University Press.
+
+\hypertarget{attendance}{%
+\section{Attendance}\label{attendance}}
+
+We meet for class every Thursday and every other Tuesday of the
+semester, following the schedule available on Canvas. Discussion
+meetings, which occur every other Thursday (as indicated in the course
+schedule) last for 1.5 hours, in contrast to lecture meetings, which
+last 1.25 hours. Attendance is not required, but groups are encouraged
+to indicate absences when evaluating members who have not contributed
+\emph{and} are not present for group work, such as in-class discussions.
+
+When applicable, excused absences include documented illness, deaths in
+the family and other documented crises, call to active military duty or
+jury duty, religious holy days, and official University activities.
+These absences will be accommodated in a way that does not arbitrarily
+penalize students who have a valid excuse. Consideration will also be
+given to students whose dependent children experience serious illness.
+
+\hypertarget{grades}{%
+\section{Grades}\label{grades}}
+
+\hypertarget{composition}{%
+\subsection{Composition}\label{composition}}
+
+Your final course grade is a combination of scores according to the
+table shown below.
+
+\hypertarget{topical-discussions-group-grade-individually-weighted}{%
+\subsubsection{Topical Discussions (Group Grade, Individually
+Weighted)}\label{topical-discussions-group-grade-individually-weighted}}
+
+Students will participate in each module's discussion, live on Zoom on
+the Thursdays indicated. It is expected that both groups and individual
+students come prepared to give responses during these discussions, as
+the discussion questions (which pertain to the module's subject matter)
+will be provided beforehand. The grade a student receives for his/her
+discussion response participation will be based on the professor's
+evaluation of his/her group's contribution to the discussion, and
+weighted (adjusted) by their group members' peer evaluations of their
+contributions to the same, \textbf{\emph{which must be completed within
+the last 5 minutes of every discussion meeting, before leaving the Zoom
+session}}.
+
+\hypertarget{group-research-project-group-grade-individually-weighted}{%
+\subsubsection{Group Research Project (Group Grade, Individually
+Weighted)}\label{group-research-project-group-grade-individually-weighted}}
+
+Each group will be assigned a research project on an international
+organization. This will be the international organization that shares
+the name of their group, unless the group unanimously votes otherwise.
+There are two parts to the project.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Part 1} requires groups to submit a set of discussion
+  questions (i.e., questions for which there are valid, divergent
+  responses). Groups will provide the class with questions for the
+  topical discussion by the Tuesday prior to that discussion.
+\item
+  \textbf{Part 2} requires the creation of a PDF slideshow which:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    introduces the class to the organization and analyzes its historical
+    origins and institutional structure, and
+  \item
+    evaluates whether and how the organization matters in world
+    politics, using examples from the text, lecture, or personal
+    research. Groups will present on their research during the
+    applicable topical discussion. Presentations should last between
+    10-15 minutes.
+  \end{itemize}
+\end{itemize}
+
+The grade a student receives for this assignment will be based on the
+professor's evaluation of their group's delivery of both the presenation
+and the discussion, which is then weighted (adjusted) by their group
+members' peer evaluations of their contributions to the same,
+\textbf{\emph{which must be completed within the last 5 minutes of every
+discussion meeting, before leaving the Zoom session.}}
+
+\hypertarget{reading-guides-individual-grade}{%
+\subsubsection{Reading Guides (Individual
+Grade)}\label{reading-guides-individual-grade}}
+
+For each module, students complete this individual-work assignment as a
+way to explore more complex concepts presented in the reading materials,
+which is helpful for a proper undertanding of the semester's coursework
+as a whole. A reading guide consists of a set of questions directly
+related to a module's readings. Students are, therefore,neither
+encouraged nor expected to turn to outside resources to complete the
+reading guides.
+
+\hypertarget{final-exam-individual-grade}{%
+\subsubsection{Final Exam (Individual
+Grade)}\label{final-exam-individual-grade}}
+
+The final exam is a multiple choice quiz that is cumulative, open-book,
+and comprises questions drawn from the lecture slides and assigned
+readings (and therefore, the reading guides as well). It is timed, and
+completed individually during finals week.
+
+\hypertarget{scales}{%
+\subsection{Scales}\label{scales}}
+
+This course uses the grading scale displayed here. Where they exist, due
+dates should be strictly adhered to. Assignments will receive a
+deduction of 5 percent for each calendar day they are late. Students are
+expected to complete missing assignments before seeking any extra credit
+(which is always offered to the entire class). Extra credit will not be
+assigned within the last two weeks of the semester.
+
+\begin{table}[!h]
+\caption{\label{tab:unnamed-chunk-2}Grade syllabus$Composition and syllabus$Grading Scale}
+
+\centering
+\begin{tabular}[t]{ll}
+\toprule
+Component & Proportion\\
+\midrule
+Quizzes (5/6) & 0.4\\
+Final Project (1) & 0.2\\
+Case Law Presentation (1) & 0.1\\
+Con. Issue Presentation (1) & 0.1\\
+Discussion Posts (8) & 0.1\\
+\addlinespace
+Reading Guides (8) & 0.05\\
+Discussion Responses (16) & 0.05\\
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ & \_\_\_\\
+Total & 1\\
+\bottomrule
+\end{tabular}
+\centering
+\begin{tabular}[t]{llllll}
+\toprule
+Grade & Range & Grade & Range & Grade & Range\\
+\midrule
+NA & NA & A & >92\% & A- & 90\%-92\%\\
+B+ & 87\%-89\% & B & 83\%-86\% & B- & 80\%-82\%\\
+C+ & 77\%-79\% & C & 73\%-76\% & C- & 70\%-72\%\\
+D+ & 67\%-69\% & D & 63\%-66\% & D- & 60\%-62\%\\
+F & <60\% & NA & NA & NA & NA\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\hypertarget{course-policies}{%
+\section{Course Policies}\label{course-policies}}
+
+\hypertarget{student-responsibility-highlights}{%
+\subsection{Student Responsibility
+Highlights}\label{student-responsibility-highlights}}
+
+\begin{itemize}
+\tightlist
+\item
+  Students should log on to Canvas at least once a day to check for
+  course updates. All links to external sites such as Zoom and office
+  appointments, can be found on the course's Canvas homepage.
+\item
+  Student should review module readings and lectures before discussion
+  sessions.
+\item
+  Students should contribute equally to group work and identify
+  classmates who do not.
+\item
+  Students will not disrespect each others religious, cultural,
+  political, or ideological beliefs.
+\item
+  Students will accept each others right to reasonably debate religious,
+  cultural, political, or ideological beliefs of any kind.\footnote{Here,
+    a reasonable argument must present at least one statement for and
+    one against your chosen point of view.}
+\end{itemize}
+
+\hypertarget{rules-for-on-line-interaction}{%
+\subsection{Rules for On-line
+Interaction}\label{rules-for-on-line-interaction}}
+
+\begin{itemize}
+\tightlist
+\item
+  When appearing on camera, you should be fully dressed as if you were
+  physically attending a university class.
+\item
+  \textbf{Remember: sarcasm is fine; joke within reason; and sexual
+  harassment is real. Try to be aware and understanding of the fact that
+  our on-line communications might not be conveyed as positively as our
+  in-class interactions might.}
+\end{itemize}
+
+\hypertarget{syllabus-change-policy}{%
+\subsection{Syllabus Change Policy}\label{syllabus-change-policy}}
+
+Except for changes that substantially affect implementation of the
+evaluation (grading) statement, this syllabus is a guide for the course
+and is subject to change with advance notice.
+
+\hypertarget{university-policies}{%
+\section{University Policies}\label{university-policies}}
+
+\hypertarget{academic-honor-policy}{%
+\subsection{Academic Honor Policy}\label{academic-honor-policy}}
+
+The Florida State University Academic Honor Policy outlines the
+University's expectations for the integrity of students' academic work,
+the procedures for resolving alleged violations of those expectations,
+and the rights and responsibilities of students and faculty members
+throughout the process. Students are responsible for reading the
+Academic Honor Policy and for living up to their pledge to ``\ldots be
+honest and truthful and\ldots{} {[}to{]} strive for personal and
+institutional integrity at Florida State University.'' (For more details
+see the FSU Academic Honor Policy and procedures for addressing alleged
+violations Links to an external site..)
+
+\hypertarget{americans-with-disabilities-act-ada}{%
+\subsection{Americans With Disabilities Act
+(ADA)}\label{americans-with-disabilities-act-ada}}
+
+Students with disabilities needing academic accommodation should (1)
+register with and provide documentation to the Student Disability
+Resource Center and (2) bring a letter to the instructor indicating the
+need for accommodation and what type. Please note that instructors are
+not allowed to provide classroom accommodation to a student until
+appropriate verification from the Student Disability Resource Center has
+been provided. This syllabus and other class materials are available in
+alternative format upon request. For more information about services
+available to FSU students with disabilities, contact the Student
+Disability Resource Center (SDRC) 108 Student Services Building
+\textbar{} Florida State University \textbar{} (850) 644-9566 (voice)
+\textbar{} (850) 644-8504 (TDD) \textbar{} Email:
+\href{mailto:sdrc@admin.fsu.edu}{\nolinkurl{sdrc@admin.fsu.edu}}
+
+\hypertarget{notification-of-accommodation}{%
+\subsection{Notification of
+Accommodation}\label{notification-of-accommodation}}
+
+Religious and ADA accommodations must be secured within the first 3
+weeks of the semester. You cannot request accommodations on an
+assignment after that assignment has become due. Accommodations will not
+be discussed with other students.
+
+
+\end{document}
