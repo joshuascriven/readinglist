@@ -146,7 +146,7 @@ The grade a student receives for this assignment will be based on the professor'
 
 ### Reading Guides (Individual Grade)
 
-For each module, students complete this individual-work assignment as a way to explore more complex concepts presented in the reading materials, which is  helpful for a proper undertanding of the semester's coursework as a whole. A reading guide consists of a set of questions directly related to a module's readings. Students are, therefore,neither encouraged  nor expected to turn to outside resources to complete the reading guides.
+For each module, students complete this individual-work assignment as a way to explore more complex concepts presented in the reading materials, which is  helpful for a proper undertanding of the semester's coursework as a whole. A reading guide consists of a set of questions directly related to a module's readings. Students are, therefore, neither encouraged  nor expected to turn to outside resources to complete the reading guides.
 
 ### Final Exam (Individual Grade)
 
